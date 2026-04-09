@@ -73,55 +73,7 @@ export default function Hero() {
       </div>
 
       {/* RIGHT CARD */}
-      <div className="hidden md:block absolute right-10 top-1/2 -translate-y-1/2 w-[320px]">
-
-        <div className="bg-white border rounded-xl shadow-lg overflow-hidden">
-
-          {/* Top */}
-          <div className="bg-teal-500 p-6 text-center text-white">
-            <div className="w-16 h-16 mx-auto mb-3 rounded-full border-2 border-white/40 flex items-center justify-center text-xl font-bold bg-white/20">
-              D
-            </div>
-            <div className="font-semibold text-lg">Dr. Priya Sharma</div>
-            <div className="text-xs opacity-80">
-              Cardiologist · Apollo Hospital, Delhi
-            </div>
-          </div>
-
-          {/* Body */}
-          <div className="p-4 text-sm">
-            <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-500">Specialisation</span>
-              <span className="font-semibold">Cardiology</span>
-            </div>
-            <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-500">Experience</span>
-              <span className="font-semibold">14 Years</span>
-            </div>
-            <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-500">Consultation Fee</span>
-              <span className="font-semibold">₹800</span>
-            </div>
-            <div className="flex justify-between py-2 border-b">
-              <span className="text-gray-500">Next Available</span>
-              <span className="font-semibold text-green-600">Today 4PM</span>
-            </div>
-            <div className="flex justify-between py-2">
-              <span className="text-gray-500">Rating</span>
-              <span className="font-semibold">⭐ 4.9 (312)</span>
-            </div>
-
-            <button className="w-full mt-4 bg-teal-500 text-white py-2 rounded-md hover:bg-teal-600 transition">
-              Book an Appointment
-            </button>
-
-            <div className="text-center text-xs text-teal-600 mt-2">
-              doctorcard.in/priya
-            </div>
-          </div>
-
-        </div>
-      </div>
+      
 
     </section>
   );

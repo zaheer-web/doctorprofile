@@ -7,6 +7,7 @@ import ReviewsSection from '../component/profile/ReviewsSection'
 import SubscribeSection from '../component/profile/SubscribeSection'
 import AppointmentSection from '../component/profile/AppointmentSection'
 import ContactSection from '../component/profile/ContactSection'
+// import AppointmentForm from '../component/profile/AppointmentForm'
 
 
 
@@ -15,6 +16,7 @@ function SeeProfile() {
   return (
     <>
     <SeeHero/>
+    {/* <AppointmentForm/> */}
     <AboutSection/>
     <ArticesSection/>
     <AppointmentSection/>

@@ -17,6 +17,7 @@ export default function Sidebar({ role }) {
     { name: "Dashboard", path: "/doctor", icon: <LayoutDashboard size={18} /> },
     { name: "My Profile", path: "/doctor/profile", icon: <User size={18} /> },
     { name: "Appointments", path: "/doctor/appointments", icon: <Calendar size={18} /> },
+    
   ];
 
   const adminMenu = [

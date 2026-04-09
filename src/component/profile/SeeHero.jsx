@@ -1,5 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+
 
 const container = {
   hidden: {},
@@ -85,6 +88,7 @@ export default function SeeHero() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <Link to="/book">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -94,6 +98,7 @@ export default function SeeHero() {
             >
               Book Appointment
             </motion.button>
+            </Link>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -139,14 +144,16 @@ export default function SeeHero() {
             ))}
           </div>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="mt-4 w-full py-2 rounded-lg 
-            bg-gradient-to-r from-teal-700 to-teal-900 
-            text-white text-xs sm:text-sm shadow"
-          >
-            Book Appointment →
-          </motion.button>
+         <Link to="/book">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    className="mt-4 w-full py-2 rounded-lg 
+    bg-gradient-to-r from-teal-700 to-teal-900 
+    text-white text-xs sm:text-sm shadow"
+  >
+    Book Appointment →
+  </motion.button>
+</Link>
         </motion.div>
 
       </motion.div>

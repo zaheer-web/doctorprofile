@@ -39,6 +39,7 @@ import { AuthProvider } from "./context/AuthContext";
 import AdminRoute from "./routes/AdminRoute";
 import DoctorRoute from "./routes/DoctorRoute";
 import Enquiries from './files/admin/Enquiries';
+import AppointmentForm from './component/profile/AppointmentForm';
 
 
 // 👇 MAIN LOGIC
@@ -68,6 +69,7 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-otp" element={<VerifyOtp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/book" element={<AppointmentForm/>} />
 
         {/* 🔥 DOCTOR ROUTES */}
         <Route
