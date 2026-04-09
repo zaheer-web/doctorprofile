@@ -40,7 +40,7 @@ export default function Hero() {
             </button>
           </Link>
 
-          <Link to="/profile">
+          <Link to="/login">
             <button className="border border-gray-300 px-6 py-3 rounded-md text-sm hover:bg-gray-100 transition">
               See a Live Profile
             </button>

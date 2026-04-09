@@ -17,7 +17,6 @@ export default function Sidebar({ role }) {
     { name: "Dashboard", path: "/doctor", icon: <LayoutDashboard size={18} /> },
     { name: "My Profile", path: "/doctor/profile", icon: <User size={18} /> },
     { name: "Appointments", path: "/doctor/appointments", icon: <Calendar size={18} /> },
-    
   ];
 
   const adminMenu = [
@@ -30,7 +29,7 @@ export default function Sidebar({ role }) {
 
   return (
     <>
-      {/* TOP BAR */}
+      {/* 🔥 MOBILE TOP BAR */}
       <div className="md:hidden flex items-center gap-3 px-4 py-3 bg-[#0d2d2a] border-b border-teal-800">
         <button onClick={() => setOpen(true)}>
           <Menu size={22} />
@@ -40,7 +39,7 @@ export default function Sidebar({ role }) {
         </h2>
       </div>
 
-      {/* OVERLAY */}
+      {/* 🔥 OVERLAY */}
       {open && (
         <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
@@ -48,12 +47,20 @@ export default function Sidebar({ role }) {
         />
       )}
 
-      {/* SIDEBAR */}
+      {/* 🔥 SIDEBAR */}
       <div
-        className={`fixed md:static top-0 left-0 z-50 h-screen w-64 bg-[#0d2d2a] text-white flex flex-col transition-transform duration-300
-        ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
+        className={`
+          fixed md:sticky md:top-0
+          top-0 left-0 z-50
+          h-screen w-64
+          bg-[#0d2d2a] text-white
+          flex flex-col
+          transition-transform duration-300
+          ${open ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+        `}
       >
-        <div className="px-4 py-4 border-b border-teal-800 flex justify-between">
+        {/* HEADER */}
+        <div className="px-4 py-4 border-b border-teal-800 flex justify-between items-center">
           <h2 className="text-lg font-bold text-teal-300">
             {role === "admin" ? "Admin Panel" : "Doctor Panel"}
           </h2>
@@ -63,6 +70,7 @@ export default function Sidebar({ role }) {
           </button>
         </div>
 
+        {/* MENU */}
         <ul className="flex-1 overflow-y-auto p-3 space-y-2">
           {menu.map((item, i) => (
             <li key={i}>
@@ -70,7 +78,7 @@ export default function Sidebar({ role }) {
                 to={item.path}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2 rounded-lg ${
+                  `flex items-center gap-3 px-3 py-2 rounded-lg transition ${
                     isActive
                       ? "bg-teal-600/20 border border-teal-500 text-teal-300"
                       : "text-gray-300 hover:bg-teal-700/20"
@@ -84,6 +92,7 @@ export default function Sidebar({ role }) {
           ))}
         </ul>
 
+        {/* LOGOUT */}
         <div className="p-4 border-t border-teal-800">
           <button className="w-full text-left p-2 text-red-400 hover:bg-red-500/20 rounded">
             Logout

@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export default function Layout({ role }) {
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex flex-col md:flex-row min-h-screen">
 
       {/* Sidebar */}
       <Sidebar role={role} />
@@ -17,7 +17,7 @@ export default function Layout({ role }) {
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6">
-          <div className="w-full">
+          <div className="w-full max-w-full">
             <Outlet />
           </div>
         </div>
