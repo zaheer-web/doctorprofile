@@ -1,9 +1,10 @@
-import './App.css'
+import './App.css';
 
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
 import Navbar from './pages/Navbar';
 import Home from './pages/Home';
-
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
@@ -29,7 +30,7 @@ import Profile from './files/doctor/Profile';
 // 🔥 ADMIN PAGES
 import AdminHome from './files/admin/AdminHome';
 import Doctors from './files/admin/Doctors';
-
+import Enquiries from './files/admin/Enquiries';
 
 // 🔥 LAYOUT
 import Layout from './dashboard/Layout';
@@ -38,8 +39,28 @@ import Layout from './dashboard/Layout';
 import { AuthProvider } from "./context/AuthContext";
 import AdminRoute from "./routes/AdminRoute";
 import DoctorRoute from "./routes/DoctorRoute";
-import Enquiries from './files/admin/Enquiries';
+
 import AppointmentForm from './component/profile/AppointmentForm';
+
+
+// ✅ 🔥 FIXED SCROLL COMPONENT (NO SEPARATE FILE NEEDED)
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // normal pages
+    window.scrollTo(0, 0);
+
+    // dashboard scroll container
+    const main = document.getElementById("main-content");
+    if (main) {
+      main.scrollTo(0, 0);
+    }
+
+  }, [pathname]);
+
+  return null;
+}
 
 
 // 👇 MAIN LOGIC
@@ -52,6 +73,9 @@ function AppContent() {
 
   return (
     <>
+      {/* 🔥 SCROLL FIX */}
+      <ScrollToTop />
+
       {!hideNavbar && <Navbar />}
 
       <Routes>
@@ -69,21 +93,21 @@ function AppContent() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/verify-otp" element={<VerifyOtp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/book" element={<AppointmentForm/>} />
+        <Route path="/book" element={<AppointmentForm />} />
 
         {/* 🔥 DOCTOR ROUTES */}
         <Route
-  path="/doctor"
-  element={
-    <DoctorRoute>
-      <Layout role="doctor" />
-    </DoctorRoute>
-  }
->
-  <Route index element={<DoctorHome />} />
-  <Route path="appointments" element={<Appointments />} />
-  <Route path="profile" element={<Profile />} />
-</Route>
+          path="/doctor"
+          element={
+            <DoctorRoute>
+              <Layout role="doctor" />
+            </DoctorRoute>
+          }
+        >
+          <Route index element={<DoctorHome />} />
+          <Route path="appointments" element={<Appointments />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
 
         {/* 🔥 ADMIN ROUTES */}
         <Route
@@ -97,7 +121,7 @@ function AppContent() {
           <Route element={<AdminDashboard />}>
             <Route index element={<AdminHome />} />
             <Route path="doctors" element={<Doctors />} />
-            <Route path="enquiries" element={<Enquiries/>} />
+            <Route path="enquiries" element={<Enquiries />} />
           </Route>
         </Route>
 

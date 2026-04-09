@@ -16,7 +16,10 @@ export default function Layout({ role }) {
         {role === "doctor" && <DoctorHeader />}
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6">
+        <div
+          id="main-content"   // 🔥 YE ADD KARNA HAI
+          className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6"
+        >
           <div className="w-full max-w-full">
             <Outlet />
           </div>
