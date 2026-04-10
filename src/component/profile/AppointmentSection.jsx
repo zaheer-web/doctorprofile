@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -113,15 +115,18 @@ export default function AppointmentSection() {
             ))}
 
             {/* Button */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.96 }}
-              className="mt-4 sm:mt-5 w-full py-2.5 sm:py-3 rounded-xl 
-              bg-gradient-to-r from-teal-700 to-teal-900 
-              text-white text-sm font-medium shadow-lg hover:shadow-xl transition"
-            >
-              Choose a Time Slot →
-            </motion.button>
+            
+           <Link to="/book">
+  <motion.button
+    whileHover={{ scale: 1.03 }}
+    whileTap={{ scale: 0.96 }}
+    className="mt-4 sm:mt-5 w-full py-2.5 sm:py-3 rounded-xl 
+    bg-gradient-to-r from-teal-700 to-teal-900 
+    text-white text-sm font-medium shadow-lg hover:shadow-xl transition"
+  >
+    Choose a Time Slot →
+  </motion.button>
+</Link>
 
           </div>
         </motion.div>

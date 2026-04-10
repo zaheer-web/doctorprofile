@@ -49,7 +49,7 @@ export default function Profile() {
 
               <Input label="Full Name" />
               <Input label="Email" value="karan@gmail.com" disabled />
-              <Input label="Phone" disabled />
+              <Input label="Phone" value="9310109925" disabled />
               <Input label="Gender" />
               <Input label="Date of Birth" />
               <Input label="Specialization" />

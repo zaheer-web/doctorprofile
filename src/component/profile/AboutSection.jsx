@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -89,6 +90,7 @@ export default function AboutSection() {
             variants={fadeUp}
             className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
+           <Link to="/book">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -98,14 +100,9 @@ export default function AboutSection() {
             >
               Book Appointment
             </motion.button>
+            </Link>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              className="w-full sm:w-auto px-5 sm:px-6 py-2 rounded-xl border border-gray-300 
-              text-gray-700 text-sm hover:bg-gray-100 transition"
-            >
-              Learn More
-            </motion.button>
+            
           </motion.div>
 
         </motion.div>
