@@ -13,13 +13,14 @@ import { useState } from "react";
 export default function Sidebar({ role }) {
   const [open, setOpen] = useState(false);
 
-  const doctorMenu = [
+ const doctorMenu = [
   { name: "Dashboard", path: "/doctor", icon: <LayoutDashboard size={18} /> },
   { name: "My Profile", path: "/doctor/profile", icon: <User size={18} /> },
   { name: "Appointments", path: "/doctor/appointments", icon: <Calendar size={18} /> },
 
   // ✅ NEW
   { name: "Enquiries", path: "/doctor/enquiries", icon: <Users size={18} /> },
+  
 ];
 
   const adminMenu = [

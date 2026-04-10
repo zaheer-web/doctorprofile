@@ -27,6 +27,8 @@ import DoctorHome from './files/doctor/DoctorHome';
 import Appointments from './files/doctor/Appointments';
 import Profile from './files/doctor/Profile';
 import DoctorEnquiries from './files/doctor/DoctorEnquiries';
+import ChangeEmail from './files/doctor/ChangeEmail';
+
 
 // 🔥 ADMIN PAGES
 import AdminHome from './files/admin/AdminHome';
@@ -112,6 +114,8 @@ function AppContent() {
 
   {/* ✅ NEW ROUTE */}
   <Route path="enquiries" element={<DoctorEnquiries/>} />
+   <Route path="change-email" element={<ChangeEmail/>} />
+  
 
 </Route>
 
