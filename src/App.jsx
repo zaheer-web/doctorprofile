@@ -26,6 +26,7 @@ import AdminDashboard from './files/admin/AdminDashboard';
 import DoctorHome from './files/doctor/DoctorHome';
 import Appointments from './files/doctor/Appointments';
 import Profile from './files/doctor/Profile';
+import DoctorEnquiries from './files/doctor/DoctorEnquiries';
 
 // 🔥 ADMIN PAGES
 import AdminHome from './files/admin/AdminHome';
@@ -41,6 +42,7 @@ import AdminRoute from "./routes/AdminRoute";
 import DoctorRoute from "./routes/DoctorRoute";
 
 import AppointmentForm from './component/profile/AppointmentForm';
+
 
 
 // ✅ 🔥 FIXED SCROLL COMPONENT (NO SEPARATE FILE NEEDED)
@@ -97,17 +99,21 @@ function AppContent() {
 
         {/* 🔥 DOCTOR ROUTES */}
         <Route
-          path="/doctor"
-          element={
-            <DoctorRoute>
-              <Layout role="doctor" />
-            </DoctorRoute>
-          }
-        >
-          <Route index element={<DoctorHome />} />
-          <Route path="appointments" element={<Appointments />} />
-          <Route path="profile" element={<Profile />} />
-        </Route>
+  path="/doctor"
+  element={
+    <DoctorRoute>
+      <Layout role="doctor" />
+    </DoctorRoute>
+  }
+>
+  <Route index element={<DoctorHome />} />
+  <Route path="appointments" element={<Appointments />} />
+  <Route path="profile" element={<Profile />} />
+
+  {/* ✅ NEW ROUTE */}
+  <Route path="enquiries" element={<DoctorEnquiries/>} />
+
+</Route>
 
         {/* 🔥 ADMIN ROUTES */}
         <Route
